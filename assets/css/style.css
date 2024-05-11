@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --main-color: #5163F4;
+    --dark-color: #11152A;
+    --light-color: #DDD4ED;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*, ::after, ::before{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--dark-color);
+    background-color: #EFEFEF;
+}
+
+.welcome{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+h2{
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.wrapper>div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    min-height: 500px;
+    margin: 5em auto;
+    background-color: var(--main-color);
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.45) 0 25px 20px -20px;
+}
+
+:is(.login,.signup) >div {
+    position: relative;
+    flex: 1 0 50%;
+    padding: 60px;
+}
+
+.content-heading .y-style{
+    display: flex;
+    flex-direction: column;
+}
+.logo a{
+    display: inline-block;
+    margin-bottom: 60px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark-color);
+   
+}
+
+.logo span{
+    color: #213EF1;
+}
+
+.content-heading p{
+    color: var(--light-color);
+}
+
+.content-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*      HIDE SIGNUP FIRST         */
+
+.login-show .signup , .signup-show .login{
+    display: none;
+}
+
+.signup-show .signup, .login-show .login{
+    display: flex;
+}
+
+form input:not(#terms,#remember){
+    font-family: inherit;
+    width: 100%;
+    outline: none;
+    margin: 0 0 20px;
+    padding: 10px 15px;
+    border-radius: 7px;
+    border: 1px solid var(--light-color);
+}
+
+form input::placeholder{
+    color: var(--light-color);
+}
+
+form button{
+    background-color: #eb3b5a;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    margin: 35px 0;
+    border-radius: 7px;
+    line-height: 42px;
+    font-weight: 700;
+    transition: all .3 ease-out;
+    -webkit-transition: all .3 ease-out;
+}
+button:hover{
+    background-color: var(--dark-color);
+}
+
+.after-form{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.signup .after-form{
+    margin-bottom: 60px;
+}
+
+form .check{
+    position: relative;
+    padding-left: 20px;
+    float: left;
+    font-size: 12px;
+}
+
+form .check input{
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
+form .forgot{
+    float: right;
+    font-size: 12px;
+}
+form .forgot a{
+    color: var(--main-color);
+}
+form label a, .after-form a{
+    color: var(--main-color);
+}
+
+form:is(p, label) a:hover, .after-form a:hover{
+    border-bottom: 1px dotted;
+}
+
+.content-form::before{
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 200%;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate3d(-27%,21%, 0);
+    -webkit-transform: translate3d(-27%,21%, 0);
+}
+
+.y-style{
+    position: relative;
+    transform: translate3d(0, 20% ,0);
+   
+}
+
+
+
+/*MEDIA QUERIES*/
+
+@media screen and (min-width: 768px) {
+    .wrapper>div{
+        flex-direction: row;
+        max-width: 800px;
+    }
+   .signup .content-heading .y-style{
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    .content-form::before{
+        width: 200%;
+        transform: translate3d(-10%,-10%, 0);
+        -webkit-transform: translate3d(-10%,-10%, 0);
+    }
+
+    .welcome{
+        text-align: left;
+        margin: 5px 0 auto;
+    }
+    
+}
